@@ -1,0 +1,11 @@
+<repositories encoding="unicode" version="1.1">
+  <repo priority="50" quality="experimental">
+    <name>peterebden</name>
+    <description>Various miscellaneous Gentoo ebuilds</description>
+    <owner>
+      <email>peter.ebden@gmail.com</email>
+      <name>Peter Ebden</name>
+    </owner>
+    <source type="git">https://github.com/peterebden/gentoo.git</source>
+  </repo>
+</repositories>
