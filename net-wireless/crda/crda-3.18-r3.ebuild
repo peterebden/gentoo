@@ -3,7 +3,7 @@
 
 EAPI=6
 
-PYTHON_COMPAT=( python2_7 )
+PYTHON_COMPAT=( python{2_7,3_6,3_7} )
 inherit toolchain-funcs python-any-r1 udev
 
 DESCRIPTION="Central Regulatory Domain Agent for wireless networks"
@@ -37,6 +37,7 @@ PATCHES=(
 	"${FILESDIR}"/${PN}-3.18-no-werror.patch
 	"${FILESDIR}"/${PN}-3.18-cflags.patch
 	"${FILESDIR}"/${PN}-3.18-libreg-link.patch #542436
+	"${FILESDIR}"/${PN}-3.18-python-3.patch
 	"${FILESDIR}"/${PN}-3.18-openssl-1.1.0-compatibility.patch #652428
 	"${FILESDIR}"/${PN}-3.18-libressl.patch
 	"${FILESDIR}"/${PN}-3.18-ldflags.patch
