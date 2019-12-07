@@ -11,6 +11,7 @@ SRC_URI="https://github.com/${P}/${P}/archive/v${PV}.tar.gz"
 
 LICENSE="GPL-2"
 SLOT="0"
+KEYWORDS="amd64"
 
 BUILD_TARGETS="clean driver"
 BUILD_PARAMS="-j1 -C ${S} SUBDIRS=${S}/driver"
