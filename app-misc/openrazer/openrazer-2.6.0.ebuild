@@ -13,6 +13,8 @@ LICENSE="GPL-2"
 SLOT="0"
 KEYWORDS="amd64"
 
+DEPEND="virtual/linux-sources"
+
 BUILD_TARGETS="clean driver"
 BUILD_PARAMS="-j1 -C ${S} SUBDIRS=${S}/driver"
 MODULE_NAMES="
