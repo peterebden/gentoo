@@ -1,0 +1,25 @@
+diff --git a/src/lib/elput/elput_manager.c b/src/lib/elput/elput_manager.c
+index 987e73759b..b0d1d76d69 100644
+--- a/src/lib/elput/elput_manager.c
++++ b/src/lib/elput/elput_manager.c
+@@ -4,6 +4,8 @@ static Elput_Interface *_ifaces[] =
+ {
+ #if defined(HAVE_SYSTEMD) || defined(HAVE_ELOGIND)
+    &_logind_interface,
++#else
++#error "Must configure elogind"
+ #endif
+    NULL,
+ };
+diff --git a/src/lib/elput/meson.build b/src/lib/elput/meson.build
+index 2aa3590d2b..93700ccdef 100644
+--- a/src/lib/elput/meson.build
++++ b/src/lib/elput/meson.build
+@@ -24,6 +24,7 @@ if get_option('systemd')
+ endif
+ if get_option('elogind')
+   elput_deps += dependency('libelogind')
++  config_h.set('HAVE_ELOGIND', '1')
+ endif
+ 
+ elput_lib = library('elput',
