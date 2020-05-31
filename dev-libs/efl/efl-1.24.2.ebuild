@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit meson xdg-utils
+inherit eutils meson xdg-utils
 
 DESCRIPTION="Enlightenment Foundation Libraries all-in-one package"
 HOMEPAGE="https://www.enlightenment.org"
