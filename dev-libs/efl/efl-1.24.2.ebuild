@@ -3,7 +3,7 @@
 
 EAPI=7
 
-inherit eutils meson xdg-utils
+inherit meson xdg-utils
 
 DESCRIPTION="Enlightenment Foundation Libraries all-in-one package"
 HOMEPAGE="https://www.enlightenment.org"
@@ -130,7 +130,7 @@ BDEPEND="virtual/pkgconfig
 	nls? ( sys-devel/gettext )"
 
 src_configure() {
-    epatch "${FILESDIR}/elogind.patch"
+    patch -p1 < "${FILESDIR}/elogind.patch" || die "epatch failed"
 
 	local emesonargs=(
 		--buildtype=release
